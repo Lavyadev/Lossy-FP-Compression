@@ -76,8 +76,8 @@ The statistical properties (mean, variance, and standard deviation) of the data 
 ### Visualizations
 Below are the histograms comparing the original and compressed distributions for each bit level:
 
-![Histograms](plots/histograms.png)  
-*(Replace `C:\Users\ADMIN\Desktop\cpp\output.png` with the actual path to your saved plot image.)*
+![Histograms](Lossy-FP-Compression\output.png)  
+
 
 ---
 
