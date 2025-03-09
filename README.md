@@ -76,7 +76,7 @@ The statistical properties (mean, variance, and standard deviation) of the data 
 ### Visualizations
 Below are the histograms comparing the original and compressed distributions for each bit level:
 
-![Histograms](Lossy-FP-Compression\output.png)  
+![Histograms](output.png)  
 
 
 ---
