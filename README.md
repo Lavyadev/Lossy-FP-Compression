@@ -81,6 +81,31 @@ Below are the histograms comparing the original and compressed distributions for
 
 ---
 
+### Optimal Compression Levels for Different Use Cases
+
+The choice of compression level (number of bits zeroed) depends on the specific use case and the trade-offs between precision, storage, and computational requirements. Below are some recommendations for different scenarios:
+
+---
+
+#### 1. **High-Precision Computing**
+   - **Use Case**: Scientific simulations, financial modeling, or any application where data accuracy is critical.
+   - **Recommendation**: Use minimal or no compression (e.g., **0–8 bits zeroed**).
+   - **Reasoning**:
+     - High-precision computing requires minimal loss of data fidelity.
+     - Zeroing out too many bits can introduce significant errors, affecting the reliability of results.
+     - The MSE and changes in statistical properties are minimal for 8 bits zeroed, making it a safe choice for high-precision applications.
+
+---
+
+#### 2. **Limited Storage Resources**
+   - **Use Case**: Applications with strict storage constraints, such as edge devices, IoT sensors, or mobile applications.
+   - **Recommendation**: Use moderate to high compression (e.g., **12–16 bits zeroed**).
+   - **Reasoning**:
+     - While the file size remains unchanged (since the number of bytes stored is the same), reducing precision can help in subsequent compression steps (e.g., using lossless compression algorithms like ZIP).
+     - The MSE increases, but the trade-off may be acceptable if storage savings are prioritized over precision.
+
+---
+
 ### Conclusion
 This experiment demonstrates that zeroing out the least significant bits of floating-point data can introduce errors (as measured by MSE) and alter statistical properties, especially when a larger number of bits are zeroed out. However, the file size remains unchanged, as the compression method does not reduce the number of bytes stored. This technique may be useful in scenarios where reduced precision is acceptable, but it is not suitable for applications requiring exact data fidelity.
 
